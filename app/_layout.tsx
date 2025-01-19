@@ -5,11 +5,10 @@ import * as SplashScreen from 'expo-splash-screen'
 import { StatusBar } from 'expo-status-bar'
 import { useEffect } from 'react'
 import 'react-native-reanimated'
-import '../global.css'
 
 import { useColorScheme } from '@/hooks/useColorScheme'
+import '../global.css'
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
@@ -33,7 +32,23 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen
           name='(tabs)'
-          options={{ headerShown: false }}
+          options={{ headerShown: false, title: 'Shop' }}
+        />
+        <Stack.Screen
+          name='categories'
+          options={{ headerShown: false, title: 'Categories' }}
+        />
+        <Stack.Screen
+          name='product'
+          options={{ headerShown: true, title: 'Product' }}
+        />
+        <Stack.Screen
+          name='cart'
+          options={{ headerShown: true, presentation: 'modal', title: 'Cart' }}
+        />
+        <Stack.Screen
+          name='auth'
+          options={{ headerShown: true, title: 'Auth' }}
         />
         <Stack.Screen name='+not-found' />
       </Stack>
